@@ -1,6 +1,8 @@
 #include "shell.h"
+
 void execute_command(const char *command) {
     pid_t child_pid = fork();
+
     if (child_pid == -1) {
         perror("fork");
         exit(EXIT_FAILURE);
