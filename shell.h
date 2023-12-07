@@ -8,6 +8,7 @@
 #include <stdbool.h>
 
 
+void user_input(char *command, size_t size);
 void display_prompt(void);
 void print(const char *message);
 void read_command(char *command, size_t size);
