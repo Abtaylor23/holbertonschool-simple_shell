@@ -17,13 +17,16 @@ void read_command(char *command, size_t size)
 {
     if (fgets(command, size, stdin) == NULL)
     {
-        if (feof(stdin)) {
+        if (feof(stdin))
+        {
             printf("\n");
             exit(EXIT_SUCCESS);
-        } else {
-            printf("Error while reading input.\n");
+        } else
+        {
+            fprintf(stderr, "Error while reading input.\n");
             exit(EXIT_FAILURE);
         }
     }
     command[strcspn(command, "\n")] = '\0'; // Remove newline
 }
+
