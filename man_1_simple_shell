@@ -1,58 +1,44 @@
-Interactive Shell Program in C
-Introduction
-This C program represents a simple interactive shell, providing a command-line interface for users. The main function, main(), serves as the entry point of the program. The purpose is to initialize the shell, prompt the user for input in an infinite loop, read the input, and execute the corresponding commands.
+# NAME
+    shell - Interactive shell program
 
-Code Breakdown
-Header Files
-c
-Copy code
-#include "shell.h"
-#include "input.h"
-The code includes two header files, "shell.h" and "input.h," which likely contain function declarations, constants, or other necessary information for the main program.
+# SYNOPSIS
+    #include "shell.h"
+    #include "input.h"
 
-main Function
-c
-Copy code
-/**
- * main - Entry point of the program
- *
- * Description: This function initializes the shell and enters
- * an infinite loop to continuously prompt the user for input,
- * read the input, and execute corresponding commands.
- *
- * Return: Always 0 (success)
- */
-int main(void)
-{
-    char command[128];
+    int main(void);
 
-    while (1)
-    {
-        display_prompt();
-        user_input(command, sizeof(command));
-        execute_command(command);
-    }
+# DESCRIPTION
+    The `shell` program serves as a simple interactive shell, providing users
+    with a command-line interface to interact with the system. Upon execution,
+    it initializes the shell environment and enters an infinite loop. Within
+    this loop, the program continuously prompts the user for input, reads the
+    input, and executes corresponding commands.
 
-    return 0;
-}
-The main function initializes a character array command with a size of 128 to store user input. Inside an infinite loop, it performs the following steps:
+# RETURN VALUE
+    The `main` function returns 0 upon successful execution.
 
-Display Prompt: Calls the display_prompt function to show a prompt to the user.
+# EXAMPLES
+    To compile and run the shell program, use the following commands:
 
-c
-Copy code
-display_prompt();
-User Input: Calls the user_input function to read the user's input into the command array.
+    ```sh
+    gcc shell.c input.c -o shell
+    ./shell
+    ```
 
-c
-Copy code
-user_input(command, sizeof(command));
-Execute Command: Calls the execute_command function to execute the command provided by the user.
+    Once the shell is running, you can enter commands and observe their execution.
 
-c
-Copy code
-execute_command(command);
-Return 0: Exits the program with a success status (0).
+# SEE ALSO
+    - shell.h(3)
+    - input.h(3)
 
-Conclusion
-In summary, this C program represents a basic shell with an interactive command-line interface. The modular structure, use of header files, and the infinite loop ensure a continuous interaction with the user. The main function encapsulates the core functionality, providing a foundation for a more sophisticated shell implementation.
+# AUTHOR
+    Your Name <your.email@example.com>
+
+# BUGS
+    Report any bugs to the GitHub repository: https://github.com/yourusername/shell
+
+# COPYRIGHT
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
