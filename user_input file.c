@@ -27,6 +27,12 @@ void read_command(char *command, size_t size)
             exit(EXIT_FAILURE);
         }
     }
-    command[strcspn(command, "\n")] = '\0';
+    
+    
+    size_t length = strlen(command);
+    if (length > 0 && command[length - 1] == '\n') {
+        command[length - 1] = '\0';
+    }
 }
+
 
