@@ -1,5 +1,4 @@
 #include "shell.h"
-#include "input.h"
 
 /**
  * main - Entry point of the program
