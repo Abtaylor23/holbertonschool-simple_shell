@@ -1,0 +1,58 @@
+Interactive Shell Program in C
+Introduction
+This C program represents a simple interactive shell, providing a command-line interface for users. The main function, main(), serves as the entry point of the program. The purpose is to initialize the shell, prompt the user for input in an infinite loop, read the input, and execute the corresponding commands.
+
+Code Breakdown
+Header Files
+c
+Copy code
+#include "shell.h"
+#include "input.h"
+The code includes two header files, "shell.h" and "input.h," which likely contain function declarations, constants, or other necessary information for the main program.
+
+main Function
+c
+Copy code
+/**
+ * main - Entry point of the program
+ *
+ * Description: This function initializes the shell and enters
+ * an infinite loop to continuously prompt the user for input,
+ * read the input, and execute corresponding commands.
+ *
+ * Return: Always 0 (success)
+ */
+int main(void)
+{
+    char command[128];
+
+    while (1)
+    {
+        display_prompt();
+        user_input(command, sizeof(command));
+        execute_command(command);
+    }
+
+    return 0;
+}
+The main function initializes a character array command with a size of 128 to store user input. Inside an infinite loop, it performs the following steps:
+
+Display Prompt: Calls the display_prompt function to show a prompt to the user.
+
+c
+Copy code
+display_prompt();
+User Input: Calls the user_input function to read the user's input into the command array.
+
+c
+Copy code
+user_input(command, sizeof(command));
+Execute Command: Calls the execute_command function to execute the command provided by the user.
+
+c
+Copy code
+execute_command(command);
+Return 0: Exits the program with a success status (0).
+
+Conclusion
+In summary, this C program represents a basic shell with an interactive command-line interface. The modular structure, use of header files, and the infinite loop ensure a continuous interaction with the user. The main function encapsulates the core functionality, providing a foundation for a more sophisticated shell implementation.
