@@ -13,7 +13,7 @@ int main(void)
 {
 char command[120];
 
-while (true)
+while (1)
 {
     display_prompt();
     read_command(command, sizeof(command));
@@ -21,5 +21,4 @@ while (true)
 }
 
     return 0;
-    }
 }
