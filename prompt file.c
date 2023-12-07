@@ -1,6 +1,6 @@
 #include "shell.h"
 
-void display promt(void)
+void display_promt(void)
 {
-printf('simple_shell$$');
+    printf("simple_shell$$");
 }
