@@ -1,4 +1,5 @@
 #include "shell.h"
+#include <sys/wait.h>
 
 /**
  * execute_command - Execute a command in a new process
