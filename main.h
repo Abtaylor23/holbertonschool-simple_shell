@@ -137,6 +137,10 @@ void shell_loop(data_shell *datash);
 
 /* read_line.c */
 char *read_line(int *i_eof);
+char **splits(char *line, const char *delim);
+char **find_path(char **environ);
+char *args_path(char **argv, char **tokens);
+void execute(char **argv);
 
 /* split.c */
 char *swap_char(char *input, int bool);
