@@ -21,14 +21,14 @@ int main(int argc, char **argv, char **environ)
 	signal(SIGINT, SIG_IGN);
 	while (1)
 	{
-		line = read_line();
-		argv = splits(line, delim);
-		command = args_path(argv, tokens);
-		if (command == NULL)
-			execute(argv);
-		free(line);
-		free(argv);
-		free(command);
+		line = read_line(NULL); // Pass NULL to indicate no EOF check
+        argv = splits(line, delim);
+        command = args_path(argv, tokens);
+        if (command == NULL)
+            execute(argv);
+        free(line);
+        free(argv);
+        free(command);
 	}
 	return (0);
 }
